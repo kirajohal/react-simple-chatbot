@@ -248,9 +248,9 @@ class ChatBot extends Component {
           this.setState({ disabled: false }, () => {
             this.input.focus();
             console.log('input just focussed');
-            console.log(this.content);
-            this.content.scrollTop = this.content.scrollHeight;
           });
+          console.log(this.content);
+          this.content.scrollTop = this.content.scrollHeight;
         } else {
           renderedSteps.push(nextStep);
           previousSteps.push(nextStep);

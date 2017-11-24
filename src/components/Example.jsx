@@ -17,6 +17,17 @@ const steps = [
   {
     id: '1',
     message: 'Hello World',
+    trigger: '2',
+  },
+  {
+    id: '2',
+    user: true,
+    iDontKnow: true,
+    trigger: '3',
+  },
+  {
+    id: '3',
+    message: 'You said {previousValue}',
     end: true,
   },
 ];

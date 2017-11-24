@@ -347,7 +347,7 @@ class ChatBot extends Component {
   }
 
   handleIDontKnowButton() {
-    this.setState({ inputValue: "I Don't Know" }, () => {
+    this.setState({ inputValue: "I don't know" }, () => {
       this.submitUserMessage();
     });
   }

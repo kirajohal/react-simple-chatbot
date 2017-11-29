@@ -118,6 +118,17 @@ class ChatBot extends Component {
 
   componentDidMount() {
     this.content.addEventListener('DOMNodeInserted', this.onNodeInserted);
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    const { opened } = nextProps;
+
+    if (opened !== undefined && opened !== nextState.opened) {
+      this.setState({ opened });
+    }
+  }
+
+  componentDidUpdate() {
     const {
       currentStep,
     } = this.state;
@@ -130,17 +141,10 @@ class ChatBot extends Component {
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    const { opened } = nextProps;
-
-    if (opened !== undefined && opened !== nextState.opened) {
-      this.setState({ opened });
-    }
-  }
-
   componentWillUnmount() {
     this.content.removeEventListener('DOMNodeInserted', this.onNodeInserted);
   }
+
 
   onNodeInserted(event) {
     event.currentTarget.scrollTop = event.currentTarget.scrollHeight;

@@ -129,15 +129,8 @@ class ChatBot extends Component {
   }
 
   componentDidUpdate() {
-    const {
-      currentStep,
-    } = this.state;
-    console.log(this.state);
-    if (currentStep.iDontKnow) {
-      console.log('I have been scrolled!');
-      console.log(this.content);
+    if (this.state.currentStep && this.state.currentStep.iDontKnow) {
       this.content.scrollTop = this.content.scrollHeight;
-      console.log(this.content.scrollTop);
     }
   }
 

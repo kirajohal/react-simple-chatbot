@@ -118,6 +118,12 @@ class ChatBot extends Component {
 
   componentDidMount() {
     this.content.addEventListener('DOMNodeInserted', this.onNodeInserted);
+    const {
+      currentStep,
+    } = this.state;
+    if (currentStep.iDontKnow) {
+      this.content.scrollTop = this.content.scrollHeight;
+    }
   }
 
   componentWillUpdate(nextProps, nextState) {
